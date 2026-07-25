@@ -28,9 +28,22 @@ function add (n) {
 }
 }
 
-
 add(node1);
 add(node2);
 add(node3);
 
 console.log(LinkedList.head)
+
+// later i will add it in class node too 
+function contains (n, target) {
+    while (n !== null && target !== n.value){
+        n = n.next;
+    } if (n === null){
+        console.log(false);
+    } else {
+        console.log(true);
+    }
+}
+
+contains(LinkedList.head, 2000);
+
