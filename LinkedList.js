@@ -1,49 +1,58 @@
 class LinkedList{
    constructor () {
        this.head = null;
-       this.tail = null;
-   }
-} 
+       this.tail = null; }
+
+
+   // add some node in the Linked List 
+   add (n) {
+    if (this.head === null){
+        this.head = n;
+        this.tail = n;
+    } else {
+        this.tail.next = n;
+        this.tail = n; }
+ }    
+  // verify if the value contains in the Linked List 
+    
+    contains (target) {
+    let n = this.head;
+        
+    while (n !== null && target !== n.value){
+        n = n.next;
+    } if (n === null){
+        console.log(false);
+    } else {
+        console.log(true); }
+}
+
+} //end class 
 
 class node {
     constructor (value){
         this.value = value;
         this.next = null;
     }
-}
+} // end class
+
+
 LinkedList = new LinkedList ();
 node1 = new node(20);
 node2 = new node(150);
 node3 = new node(100);
 
 
-//later i will add it in class node
-function add (n) {
-    if (LinkedList.head === null){
-    LinkedList.head = n;
-    LinkedList.tail = n;
-} else {
-   LinkedList.tail.next = n;
-   LinkedList.tail = n;
-}
-}
-
-add(node1);
-add(node2);
-add(node3);
+LinkedList.add(node1);
+LinkedList.add(node2);
+LinkedList.add(node3);
 
 console.log(LinkedList.head)
 
-// later i will add it in class node too 
-function contains (n, target) {
-    while (n !== null && target !== n.value){
-        n = n.next;
-    } if (n === null){
-        console.log(false);
-    } else {
-        console.log(true);
-    }
-}
+LinkedList.contains(150);
 
-contains(LinkedList.head, 2000);
+
+
+
+
+
 
