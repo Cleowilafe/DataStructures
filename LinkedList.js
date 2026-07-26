@@ -3,7 +3,6 @@ class LinkedList{
        this.head = null;
        this.tail = null; }
 
-
    // add some node in the Linked List 
    add (n) {
     if (this.head === null){
@@ -26,6 +25,55 @@ class LinkedList{
         console.log(true); }
 }
 
+  remove (target){
+      let n = this.head;
+
+      // case 1, the list is empty.
+      if (n === null) {
+          console.log(false);
+      } // end if 
+
+      //verify if the head is the target
+      if (n.value === target){
+          // case 2 the node to remove is the only node in the linked list.
+          if (n === this.tail){
+              this.head = null;
+              this.tail = null;
+              console.log(true);
+              
+        } else {
+              //case 3, we are removing the head node 
+              this.head = n.next;
+              console.log(true);
+        } 
+     } // end "if"father
+
+       // looping for run the linked list til found the target
+
+      while(n.next !== null && n.next.value !== target){
+            n = n.next;   
+      }
+       if (n.next !== null){
+           
+           // case 4, we are removing a tail
+           if (n.next === this.tail){
+               n.next = null;
+               this.tail = n;
+               console.log(true);
+           } else {
+       // case 5, the node to remove is somewhere between tail and head
+             n.next = n.next.next;
+               console.log(true);
+            
+           }
+         
+       }  else {
+      // case 6, the item to remove doesnot exist in the linked list
+      console.log(false);    
+       }
+  } // end remove
+
+    
 } //end class 
 
 class node {
@@ -46,13 +94,12 @@ LinkedList.add(node1);
 LinkedList.add(node2);
 LinkedList.add(node3);
 
-console.log(LinkedList.head)
 
-LinkedList.contains(150);
+//console.log(LinkedList.head)
+//LinkedList.contains(150);
 
+LinkedList.remove(150);
 
-
-
-
+console.log(LinkedList.head);
 
 
