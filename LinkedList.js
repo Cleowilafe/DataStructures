@@ -73,6 +73,17 @@ class LinkedList{
        }
   } // end remove
 
+    // transverse the linked list
+   transverse (){
+       let n = this.head;
+       
+       while (n !== null){
+           console.log(n.value)
+           n = n.next;
+       }
+       
+   } // end transverse
+    
     
 } //end class 
 
@@ -84,22 +95,27 @@ class node {
 } // end class
 
 
+///////////////////////////////////main/////////////////////////////////////// 
+
+
 LinkedList = new LinkedList ();
 node1 = new node(20);
 node2 = new node(150);
 node3 = new node(100);
-
+node4 = new node(400);
+node5 = new node(700);
+node6 = new node(900);
 
 LinkedList.add(node1);
 LinkedList.add(node2);
 LinkedList.add(node3);
-
+LinkedList.add(node4);
+LinkedList.add(node5);
+LinkedList.add(node6);
 
 //console.log(LinkedList.head)
 //LinkedList.contains(150);
 
-LinkedList.remove(150);
-
-console.log(LinkedList.head);
+LinkedList.transverse();
 
 
