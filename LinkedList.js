@@ -74,7 +74,7 @@ class LinkedList{
   } // end remove
 
     // transverse the linked list
-   transverse (){
+   traverse (){
        let n = this.head;
        
        while (n !== null){
@@ -82,7 +82,7 @@ class LinkedList{
            n = n.next;
        }
        
-   } // end transverse
+   } // end traverse
     
     
 } //end class 
@@ -116,6 +116,6 @@ LinkedList.add(node6);
 //console.log(LinkedList.head)
 //LinkedList.contains(150);
 
-LinkedList.transverse();
+LinkedList.traverse();
 
 
