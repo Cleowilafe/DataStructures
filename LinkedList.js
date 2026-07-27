@@ -84,6 +84,25 @@ class LinkedList{
        
    } // end traverse
     
+
+    ReverseTraverse (){
+        if (this.tail !== null){
+              let curr = this.tail;
+              //here will return all values otherwise head value
+              while (curr !== this.head){
+                  let prev = this.head;
+                  // this looping will run all the list til found the real prev value
+                  while (prev.next !== curr){
+                      prev = prev.next;
+                  } 
+                  console.log(curr.value);
+                  curr = prev;
+              } // end while
+             console.log(curr.value);
+        } // end if
+    } // end ReverseTraverse
+
+
     
 } //end class 
 
@@ -116,6 +135,7 @@ LinkedList.add(node6);
 //console.log(LinkedList.head)
 //LinkedList.contains(150);
 
+console.log("Traverse list: ");
 LinkedList.traverse();
-
-
+console.log("Reverse traverse list: ");
+LinkedList.ReverseTraverse();
