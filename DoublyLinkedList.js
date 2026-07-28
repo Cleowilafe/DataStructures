@@ -39,6 +39,49 @@ class DoublyLinkedList {
             n = n.previous;
         } // end while
     } // end reverse traverse
+
+    remove (target){
+         // case 1, if the list is empty
+         if (this.head === null) {
+             return false;
+         } // end if
+
+         // case 2 and case 3 
+        if (target === this.head.value){
+            // if the node to remove is only node in the list
+            if (this.head === this.tail){
+                this.head = null;
+                this.tail = null;
+                return true;
+                
+            } else {
+                // if the node to remove is a head
+                this.head = this.head.next;
+                this.head.previous = null;
+                return true;
+            }
+        } // end if
+
+        // run the list 
+        let n = this.head;
+
+        while(n.value !== target){
+            n = n.next;
+        }
+
+        // case 4, we are removing the tail node
+        if (target === this.tail.value){
+            this.tail = this.tail.previous;
+            this.tail.next = null;
+            return true;
+        } else if (n !== null){
+            //case 5, if the node to remove is between head and tail
+            n.previous.next = n.next; // updating the new value of the new next
+            n.next.previous = n.previous; // updating the new value of the new prev
+            return true;
+        }
+     return false;    
+    } // end remove 
     
 } // end doubly linked list class 
 
@@ -58,10 +101,18 @@ DoublyLinkedList.add(node3);
 DoublyLinkedList.add(node4);
 DoublyLinkedList.add(node5);
 
-console.log("traverse: ");
-DoublyLinkedList.traverse ();
-console.log("Reverse traverse: ");
-DoublyLinkedList.reversetraverse();
+//console.log("traverse: ");
+//DoublyLinkedList.traverse ();
+//console.log("Reverse traverse: ");
+//DoublyLinkedList.reversetraverse();
 
+console.log("before to remove: ")
+DoublyLinkedList.traverse();
+
+console.log("later to remove: ")
+
+DoublyLinkedList.remove(543);
+
+DoublyLinkedList.traverse();
 
 
