@@ -6,7 +6,6 @@ class node {
     }
 } // end node class
 
-
 class DoublyLinkedList {
     constructor (){
         this.tail = null;
@@ -33,6 +32,13 @@ class DoublyLinkedList {
             } // end while
     } // end traverse
 
+    reversetraverse (){
+        let n = this.tail;
+        while (n !== null){
+            console.log(n.value);
+            n = n.previous;
+        } // end while
+    } // end reverse traverse
     
 } // end doubly linked list class 
 
@@ -52,4 +58,10 @@ DoublyLinkedList.add(node3);
 DoublyLinkedList.add(node4);
 DoublyLinkedList.add(node5);
 
+console.log("traverse: ");
 DoublyLinkedList.traverse ();
+console.log("Reverse traverse: ");
+DoublyLinkedList.reversetraverse();
+
+
+
