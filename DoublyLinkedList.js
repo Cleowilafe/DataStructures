@@ -19,11 +19,19 @@ class DoublyLinkedList {
             this.head = node;
             this.tail = node;
         } else {
-            node.previous = this.tail; //take the last value of the tail in previous
-            this.tail.next = node; // take the
+            node.previous = this.tail;
+            this.tail.next = node;
             this.tail = node;
         }
     } // end add 
+
+    traverse (){
+        let n = this.head;
+        while (n !== null){
+            console.log(n.value);
+            n = n.next;
+            } // end while
+    } // end traverse
 
     
 } // end doubly linked list class 
@@ -38,10 +46,10 @@ node3 = new node(543);
 node4 = new node(6764);
 node5 = new node(3353);
 
-//DoublyLinkedList.add(node1);
-//DoublyLinkedList.add(node2);
-//DoublyLinkedList.add(node3);
-//DoublyLinkedList.add(node4);
-//DoublyLinkedList.add(node5);
+DoublyLinkedList.add(node1);
+DoublyLinkedList.add(node2);
+DoublyLinkedList.add(node3);
+DoublyLinkedList.add(node4);
+DoublyLinkedList.add(node5);
 
-console.log(DoublyLinkedList.head)
+DoublyLinkedList.traverse ();
